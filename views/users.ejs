@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>List of all users</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .card{
+            border: 2px solid black;
+            padding: 10px;
+            margin: 10px 0;
+            background-color: aquamarine;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        a{
+            text-decoration: none;
+            color: black;
+        }
+        button{
+            padding: 7px;
+        }
+    </style>
+  </head>
+  <body>
+    <% for(let user of users) {%> 
+        <div class="card">
+
+            <div>
+                Id: <b><%=user.id %></b><br>
+                UserName: <b><%=user.username %></b><br>
+                Email: <b><%=user.email%></b> <br>
+            </div>
+
+           <button><a href="/user/<%=user.id%>/edit">Edit Username</a></button>
+           <button><a href="/user/<%=user.id%>/delete">Delete User</a></button>
+        </div>
+        <% } %>
+  </body>
+</html>
